@@ -12,7 +12,7 @@
       <div class="grid lg:grid-cols-12 grid-cols-1 h-screen pr-6">
         <div class="lg:col-span-2 pt-6 pr-6">
           <%= link_to root_path, class:"link text-xl tracking-tight font-black" do %>
-            <span class="text-sky-500">Tweeter</span>
+            <span class="text-sky-500">Twitter</span>
           <% end %>
           <ul class="mt-6">
             <li>
@@ -35,7 +35,7 @@
           <%= content_for?(:content) ? yield(:content) : yield %>
         </div>
         <div class="lg:col-span-4 pl-6 pt-6">
-          <div class="bg-gray-50 w-full min-h-[150px] rounded-lg p-6 mb-6">Sidebar stuff</div>
+          <div class="bg-gray-50 w-full min-h-[150px] rounded-lg p-6 mb-6">Welcome to Twitter!</div>
           <% if user_signed_in? %>
             <p class="mb-4">
               Signed in as <%= current_user.name %>
