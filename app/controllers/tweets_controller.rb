@@ -41,7 +41,6 @@ class TweetsController < ApplicationController
       return
     end
 
-    puts "HIIIIIIIIIIIIIII !!!!!!!!!!!!!!@@@@@@@@@@@@"
 
     @retweet = current_user.tweets.new(tweet_id: @tweet.id)
     respond_to do |format|

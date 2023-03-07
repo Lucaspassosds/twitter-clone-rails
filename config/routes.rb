@@ -12,7 +12,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :profiles
+  resources :profiles do
+    collection do
+      post 'follow/:id' => :follow, as: 'follow'
+      post 'unfollow/:id' => :unfollow, as: 'unfollow'
+    end
+  end
+
   resources :likes, only: :create
 
   devise_for :users
