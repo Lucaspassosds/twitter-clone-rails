@@ -36,8 +36,14 @@ class TweetsController < ApplicationController
   def retweet
     @tweet = Tweet.find(params[:id])
 
-    @retweet = current_user.tweets.new(tweet_id: @tweet.id)
 
+    if current_user.tweets.any?{|tweet| tweet.tweet_id == @tweet.id}
+      return
+    end
+
+    puts "HIIIIIIIIIIIIIII !!!!!!!!!!!!!!@@@@@@@@@@@@"
+
+    @retweet = current_user.tweets.new(tweet_id: @tweet.id)
     respond_to do |format|
       if @retweet.save
         format.turbo_stream
